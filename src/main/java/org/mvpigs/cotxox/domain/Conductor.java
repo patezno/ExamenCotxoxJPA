@@ -1,18 +1,37 @@
 package org.mvpigs.cotxox.domain;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name="t_conductores")
 public class Conductor {
 
+    @Id
+    @Column(name="co_tarjeta_credito", nullable = false)
     private String tarjeta;
-    private String nombre = null;
-    private String modelo = null;
-    private String matricula = null;
-    private double valoracionMedia = 0d;
-    private boolean ocupado = false;
+
+    @Column(name="co_nombre")
+    private String nombre;
+
+    @Column(name="co_modelo")
+    private String modelo;
+
+    @Column(name = "co_matricula")
+    private String matricula;
+
+    @Column(name = "co_valoracion_media")
+    private double valoracionMedia;
+
+    @Column(name = "co_ocupado")
+    private boolean ocupado;
+
+    @Transient
     private ArrayList<Byte> valoraciones = new ArrayList<>();
+
+    @Transient
     private Set<Carrera> carreras = new HashSet<>();
 
     /**
@@ -23,8 +42,8 @@ public class Conductor {
     public Conductor() {
     }
 
-    public Conductor(String tarjetaCredito) {
-        this.tarjeta = tarjetaCredito;
+    public Conductor(String tarjeta) {
+        this.tarjeta = tarjeta;
     }
 
     /**
@@ -59,6 +78,18 @@ public class Conductor {
         return this.valoracionMedia;
     }
 
+    public double getValoracionMedia() {
+        return valoracionMedia;
+    }
+
+    public void setValoracionMedia(double valoracionMedia) {
+        this.valoracionMedia = valoracionMedia;
+    }
+
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+
     public int getNumeroValoraciones() {
         return this.valoraciones.size();
     }
@@ -68,7 +99,7 @@ public class Conductor {
         this.calcularValoracionMedia();
     }
 
-    /**
+    /*
      * Lógica de la clase
      */
 

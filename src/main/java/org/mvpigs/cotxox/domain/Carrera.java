@@ -1,22 +1,51 @@
 package org.mvpigs.cotxox.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "t_carreras")
 public class Carrera {
 
+    @Id
+    @Column(name = "c_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String tarjetaCredito = null;
-    private String origen = null;
-    private String destino = null;
-    private double distancia = 0d;
-    private int tiempoEsperado = 0;
-    private int tiempoCarrera = 0;
-    private double costeTotal = 0;
-    private int propina = 0;
-    private Conductor conductor = null;
+
+    @Column(name = "c_tarjeta_credito")
+    private String tarjetaCredito;
+
+    @Column(name = "c_origen")
+    private String origen;
+
+    @Column(name = "c_destino")
+    private String destino;
+
+    @Column(name = "c_distancia")
+    private double distancia;
+
+    @Column(name = "c_tiempo_esperado")
+    private int tiempoEsperado;
+
+    @Column(name = "c_tiempo_carrera")
+    private int tiempoCarrera;
+
+    @Column(name = "c_coste_total")
+    private double costeTotal;
+
+    @Column(name = "c_propina")
+    private int propina;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "c_conductor")
+    private Conductor conductor;
 
     /**
      * Constructores: necesitamos el constructor por defecto
      * para trabajar con Spring JPA
      */
+
+    public Carrera() {
+    }
 
     public Carrera(String tarjetaCredito) {
         this.tarjetaCredito = tarjetaCredito;
