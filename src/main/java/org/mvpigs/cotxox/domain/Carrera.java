@@ -147,4 +147,8 @@ public class Carrera {
     public void liberarConductor() {
         getConductor().setOcupado(false);
     }
+
+    public void setTarjetaCredito(String tarjetaCredito) {
+        this.tarjetaCredito = tarjetaCredito;
+    }
 }

@@ -107,11 +107,11 @@ public class CotxoxApplicationTests {
     public void test_carreraService_es_component() {
         Assert.assertNotNull(carreraService);
     }
-/*
-    *//**
+
+    /*
      * Utilitza els mètodes del repositori de carrera
      * i del servei carrera per a fer persistent una carrera
-     *//*
+     */
 
     @Test
     public void test_save_carrera() {
@@ -119,7 +119,7 @@ public class CotxoxApplicationTests {
         // seria necessari afegir el conductor però anem a testear primer repo
         Assert.assertEquals("1234567890123456", carreraService.recuperaCarrera(idCarrera).getTarjetaCredito());
     }
-
+/*
     *//**
      * Crea una classe ConductorRepo que sigui un repositori
      * Spring Data per l'entitat Conductor
