@@ -26,7 +26,7 @@ public class Conductor {
     private double valoracionMedia;
 
     @Column(name = "co_ocupado")
-    private boolean ocupado;
+    private Integer ocupado;
 
     @Transient
     private ArrayList<Byte> valoraciones = new ArrayList<>();
@@ -86,10 +86,6 @@ public class Conductor {
         this.valoracionMedia = valoracionMedia;
     }
 
-    public void setOcupado(boolean ocupado) {
-        this.ocupado = ocupado;
-    }
-
     public int getNumeroValoraciones() {
         return this.valoraciones.size();
     }
@@ -119,12 +115,16 @@ public class Conductor {
         return this.valoracionMedia;
     }
 
-    public void setOcupado(Boolean ocupado) {
-        this.ocupado = ocupado;
+    public void setOcupado(boolean ocupado) {
+        if (ocupado) {
+            this.ocupado = 1;
+        } else {
+            this.ocupado = 0;
+        }
     }
 
     public boolean isOcupado() {
-        return this.ocupado;
+        return this.ocupado == 1;
     }
 
 }

@@ -115,6 +115,10 @@ public class Carrera {
         return this.conductor;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     /**
      * Lógica de la clase
      */

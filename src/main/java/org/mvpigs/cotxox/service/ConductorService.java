@@ -30,4 +30,8 @@ public class ConductorService {
         saveConductor("2222222222222222", "Sabrina", "5DHJ444", "Toyota Prius", false);
         saveConductor("3333333333333333", "Cici", "7JKK555", "Mercedes A", false);
     }
+
+    public Conductor recuperarConductorLibre() {
+        return conductorRepo.findByOcupado(0).get(0);
+    }
 }

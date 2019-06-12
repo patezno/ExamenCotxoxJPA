@@ -201,11 +201,11 @@ public class CotxoxApplicationTests {
         Assert.assertEquals("Cici", conductorService.recuperarConductor("3333333333333333").getNombre());
         Assert.assertEquals(false, conductorService.recuperarConductor("3333333333333333").isOcupado());
     }
-/*
-    *//**
+
+    /*
      * Implementa un métode en el repositori de l'entitat Conductor
      * que retorni una llista de conductores lliures
-     *//*
+     */
 
     @Test
     public void test_recuperar_conductor_libre_repositori() {
@@ -225,10 +225,10 @@ public class CotxoxApplicationTests {
         Assert.assertEquals(false, conductoresLibres.get(1).isOcupado());
     }
 
-    *//**
+    /*
      * Implementa un mètode en el servei de l'entitat Conductor
      * que retorni una llista de conductores lliures
-     *//*
+     */
 
     @Test
     public void tets_conductor_libre_service() {
@@ -240,10 +240,10 @@ public class CotxoxApplicationTests {
         Assert.assertEquals(false, conductora.isOcupado());
     }
 
-    *//**
+    /*
      * Assigna una conductora a una carrera que ja existeix a la BBDD
      * i comprova que s'ha actualitzat el registre
-     *//*
+     */
 
     @Test
     public void test_asignar_conductor() {
@@ -264,7 +264,7 @@ public class CotxoxApplicationTests {
         Assert.assertEquals("Samantha", carreraService.recuperaCarrera(idCarrera).getConductor().getNombre());
     }
 
-    *//**
+    /*
      * A completar:
      *  - Introducció de la valoració que l'usuari/a fa del conductor/a al termini de la carrera.
      *  - Càlcul de la mitjana de valoracions d'un conductor/a mitjançant @Query

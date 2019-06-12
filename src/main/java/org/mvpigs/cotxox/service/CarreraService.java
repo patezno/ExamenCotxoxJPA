@@ -28,4 +28,8 @@ public class CarreraService {
     public Carrera recuperaCarrera(Long idCarrera) {
         return carreraRepo.findById(idCarrera).get();
     }
+
+    public void updateCarrera(Carrera carrera) {
+        carreraRepo.save(carrera);
+    }
 }
