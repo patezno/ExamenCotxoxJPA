@@ -35,7 +35,7 @@ public class Carrera {
     @Column(name = "c_propina")
     private int propina;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "c_conductor")
     private Conductor conductor;
 
