@@ -99,6 +99,13 @@ public class Conductor {
         this.calcularValoracionMedia();
     }
 
+    public String getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(String tarjeta) {
+        this.tarjeta = tarjeta;
+    }
     /*
      * Lógica de la clase
      */

@@ -11,6 +11,16 @@ public class ConductorService {
     @Autowired
     private ConductorRepo conductorRepo;
 
+    public String saveConductor(String tarjeta, String nombre, String matricula, String modelo) {
+        Conductor conductor = new Conductor();
+        conductor.setTarjeta(tarjeta);
+        conductor.setNombre(nombre);
+        conductor.setMatricula(matricula);
+        conductor.setModelo(modelo);
+        conductorRepo.save(conductor);
+        return conductor.getTarjeta();
+    }
+
     public Conductor recuperarConductor(String id) {
         return conductorRepo.findById(id).get();
     }
