@@ -6,84 +6,87 @@ import java.util.Set;
 
 public class Conductor {
 
-	private String tarjeta;
-	private String nombre = null;
-	private String modelo = null;
-	private String matricula = null;
-	private double valoracionMedia = 0d;
-	private boolean ocupado = false;
-	private ArrayList<Byte> valoraciones = new ArrayList<>();
-	private Set<Carrera> carreras = new HashSet<>();
+    private String tarjeta;
+    private String nombre = null;
+    private String modelo = null;
+    private String matricula = null;
+    private double valoracionMedia = 0d;
+    private boolean ocupado = false;
+    private ArrayList<Byte> valoraciones = new ArrayList<>();
+    private Set<Carrera> carreras = new HashSet<>();
 
-	/**
-	 * Constructores: necesitamos el constructor por defecto 
-	 * para trabajar con Spring JPA
-	 */
-		
-	public Conductor(String tarjetaCredito){
-		this.tarjeta = tarjetaCredito;
-	}
-		
-	/** 
-	 * Getters y setters
-	 */
+    /**
+     * Constructores: necesitamos el constructor por defecto
+     * para trabajar con Spring JPA
+     */
 
-	public String getNombre() {
-		return this.nombre;
-	}
+    public Conductor() {
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public Conductor(String tarjetaCredito) {
+        this.tarjeta = tarjetaCredito;
+    }
 
-	public String getModelo() {
-		return this.modelo;
-	}
+    /**
+     * Getters y setters
+     */
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public String getMatricula() {
-		return this.matricula;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
+    public String getModelo() {
+        return this.modelo;
+    }
 
-	public double getValoracion() {
-		return this.valoracionMedia;
-	}
-	
-	public int getNumeroValoraciones(){
-		return this.valoraciones.size();
-	}
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 
-	public void setValoracion(byte valoracion) {		
-		this.valoraciones.add(valoracion);
-		this.calcularValoracionMedia();
-	}
+    public String getMatricula() {
+        return this.matricula;
+    }
 
-	/**
-	 * Lógica de la clase
-	 */
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
 
-	private double calcularValoracionMedia(){
-		int sumaValoraciones = 0;
-		for(byte valoracion : this.valoraciones){
-			sumaValoraciones += valoracion;
-		}
-		this.valoracionMedia = (double) sumaValoraciones / this.valoraciones.size();
-		return this.valoracionMedia;
-	}
-	
-	public void setOcupado(Boolean ocupado){
-		this.ocupado = ocupado;
-	}
-	
-	public boolean isOcupado(){
-		return this.ocupado;
-	}
+    public double getValoracion() {
+        return this.valoracionMedia;
+    }
+
+    public int getNumeroValoraciones() {
+        return this.valoraciones.size();
+    }
+
+    public void setValoracion(byte valoracion) {
+        this.valoraciones.add(valoracion);
+        this.calcularValoracionMedia();
+    }
+
+    /**
+     * Lógica de la clase
+     */
+
+    private double calcularValoracionMedia() {
+        int sumaValoraciones = 0;
+        for (byte valoracion : this.valoraciones) {
+            sumaValoraciones += valoracion;
+        }
+        this.valoracionMedia = (double) sumaValoraciones / this.valoraciones.size();
+        return this.valoracionMedia;
+    }
+
+    public void setOcupado(Boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+
+    public boolean isOcupado() {
+        return this.ocupado;
+    }
 
 }
