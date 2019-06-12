@@ -98,16 +98,16 @@ public class CotxoxApplicationTests {
         Assert.assertNotNull(carreraRepo);
         Assert.assertTrue(carreraRepo instanceof Repository);
     }
-/*
-    *//**
+
+    /*
      * Crea una classe CarreraService que sigui un component
      * amb el rol de Service
-     *//*
+     */
     @Test
     public void test_carreraService_es_component() {
         Assert.assertNotNull(carreraService);
     }
-
+/*
     *//**
      * Utilitza els mètodes del repositori de carrera
      * i del servei carrera per a fer persistent una carrera
